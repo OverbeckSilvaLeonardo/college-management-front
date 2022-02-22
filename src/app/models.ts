@@ -38,3 +38,24 @@ export interface Subject {
 export interface SubjectList {
   Subjects: Subject[];
 }
+
+export interface Grade {
+  GradeID: number;
+  SubjectID: number;
+  Subject: string;
+  Grade: number;
+}
+
+export interface Grades {
+  Grades: Grade[];
+}
+
+export interface GetStudent {
+  StudentID: number;
+  StudentName: string;
+  Grades: Grades;
+}
+
+export interface GetStudentList {
+  Students: GetStudent[];
+}
