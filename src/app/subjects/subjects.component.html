@@ -1,0 +1,42 @@
+<section class="container">
+    <h2 class="mb-4">Subjects</h2>
+    <div *ngFor="let subject of data?.Subjects" class="row mb-4">
+        <div class="card col-12" style="padding: 0">
+
+            <div class="card-header">
+                #{{ subject.SubjectID }}
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title">{{ subject.Description }}</h5>
+
+                <p class="card-text"><span class="text-muted">Teacher Information:</span></p>
+
+                <ul class="card-text mb-4">
+                    <li class="mb-0"><b>Name:</b> {{ subject.TeacherInformation.Name }}</li>
+                    <li class="mb-0"><b>Birthday:</b> {{ subject.TeacherInformation.Birthday }}</li>
+                    <li class="mb-0"><b>Salary:</b> {{ subject.TeacherInformation.Salary | currency }}</li>
+                </ul>
+
+                <p class="card-text"><span class="text-muted">Num. of Students:</span> {{ subject.StudentCount }}</p>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Average Grade</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr *ngFor="let student of subject.StudentsList.Students">
+                        <td>{{ student.Name }}</td>
+                        <td>{{ student.AverageGrade }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>

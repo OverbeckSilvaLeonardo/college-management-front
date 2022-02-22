@@ -19,3 +19,22 @@ export interface Course {
 export interface CourseList {
   Courses: Course[];
 }
+
+export interface TeacherInformation {
+  TeacherID: number;
+  Salary: number;
+  Name: string;
+  Birthday: string;
+}
+
+export interface Subject {
+  SubjectID: number;
+  Description: string;
+  StudentCount: number;
+  TeacherInformation: TeacherInformation;
+  StudentsList: StudentsList;
+}
+
+export interface SubjectList {
+  Subjects: Subject[];
+}

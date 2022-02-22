@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Course, CourseList } from '../CourseList.model';
+import { CourseList, SubjectList } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +14,9 @@ export class ApiService {
 
   getCourses(): Observable<CourseList> {
     return this.http.get<CourseList>(`${this.url}/courses`);
+  }
+
+  getSubjects(): Observable<SubjectList> {
+    return this.http.get<SubjectList>(`${this.url}/subjects`);
   }
 }
